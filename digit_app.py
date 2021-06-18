@@ -15,7 +15,7 @@ digit_recognizer = load_model('models/CNN_1.0_98781.h5')
 
 
 # Specify canvas parameters in application
-stroke_width = st.sidebar.slider("Stroke width: ", 15, 30, 20)
+stroke_width = st.sidebar.slider("Stroke width: ", 1, 50, 20)
 stroke_color = st.sidebar.color_picker("Stroke color hex: ", "#fff")
 bg_color = st.sidebar.color_picker("Background color hex: ", "#000000")
 bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
@@ -66,15 +66,11 @@ if submit_button:
     st.write(small_img.shape)
 
     preds = digit_recognizer.predict(small_img)
-    preds_proba = digit_recognizer.predict_proba(small_img)
     st.write(preds)
-    st.write(preds_proba)
 
     st.image("temp/cv2.jpg", caption="CV2 resize")
     preds2 = digit_recognizer.predict(img)
-    preds_proba2 = digit_recognizer.predict_proba(img)
     st.write(preds2)
-    st.write(preds_proba2)
     # st.write(small_img)
 
 # Do something interesting with the image data and paths
