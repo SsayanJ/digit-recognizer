@@ -16,8 +16,8 @@ digit_recognizer = load_model('models/CNN_1.0_98781.h5')
 
 # Specify canvas parameters in application
 stroke_width = st.sidebar.slider("Stroke width: ", 1, 50, 20)
-stroke_color = st.sidebar.color_picker("Stroke color hex: ", "#fff")
-bg_color = st.sidebar.color_picker("Background color hex: ", "#000000")
+stroke_color = st.sidebar.color_picker("Stroke color hex: ", "#000000")
+bg_color = st.sidebar.color_picker("Background color hex: ", "#fff")
 bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 drawing_mode = st.sidebar.selectbox(
     "Drawing tool:", ("freedraw", "line", "rect", "circle", "transform")
